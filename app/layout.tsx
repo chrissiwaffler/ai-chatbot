@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 
@@ -6,12 +7,9 @@ import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
-import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
-  metadataBase: process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
-    : undefined,
+  metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   title: {
     default: 'Next.js AI Chatbot',
     template: `%s - Next.js AI Chatbot`
@@ -45,7 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           GeistMono.variable
         )}
       >
-        <Toaster position="top-center" />
+        <Toaster />
         <Providers
           attribute="class"
           defaultTheme="system"
